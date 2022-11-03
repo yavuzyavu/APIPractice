@@ -33,5 +33,7 @@ ve gelen yaslar icinde 21, 61, ve 23 degerlerinden birinin oldugunu test edin.
         response.then().assertThat().body("data", hasSize(24)
                 , "data.employee_name", hasItem("Ashton Cox")
                 , "data.employee_age", hasItems(21, 61, 23));
+
+
     }
 }
