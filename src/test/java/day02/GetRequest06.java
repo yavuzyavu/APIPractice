@@ -19,9 +19,10 @@ public class GetRequest06 extends Authentication {
 
         //Matcher class ile musteri bilgilerini dogrula
         response.then().assertThat().body("firstName",equalTo("Della"),
-                "lastName",equalTo("Heaney"),"email",
-                equalTo("ricardo.larkin@yahoo.com"),"mobilePhoneNumber",
-                equalTo("123-456-7893"),"accounts[0].balance",equalTo(11190),
+                "lastName",equalTo("Heaney"),
+                "email", equalTo("ricardo.larkin@yahoo.com"),
+                "mobilePhoneNumber", equalTo("123-456-7893"),
+                "accounts[0].balance",equalTo(11190),
                 "accounts[0].accountType",equalTo("CHECKING"));
 
         // JsonPath ile musteri bilgilerini dogrula
@@ -29,6 +30,11 @@ public class GetRequest06 extends Authentication {
         Assert.assertEquals("Della",json.getString("firstName"));
         Assert.assertEquals("Heaney",json.getString("lastName"));
         Assert.assertEquals("ricardo.larkin@yahoo.com",json.getString("email"));
+        Assert.assertEquals("123-456-7893",json.getString("mobilePhoneNumber"));
+        Assert.assertEquals(11190,json.getInt("accounts[0].balance"));
+        Assert.assertEquals("CHECKING",json.getInt("accounts[0].accountType"));
+        Assert.assertEquals(11190,json.getInt("accounts[0].balance"));
+
 
 
 
